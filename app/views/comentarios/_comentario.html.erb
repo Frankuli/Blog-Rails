@@ -1,0 +1,12 @@
+  <p>
+    <strong>De:</strong>
+    <%= comentario.commenter %>
+  </p>
+ 
+  <p>
+    <strong>Comentario:</strong>
+    <%= comentario.body %>
+  </p>
+<p>
+  <%= link_to 'Borrar comentario', [comentario.articulo, comentario], method: :delete, data: {confirm: 'SegurE?'} %>
+</p>

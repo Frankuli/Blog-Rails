@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  get 'bienvenido/index'
-
-  resources :articulos
-  
+  get 'bienvenido/index'  
   root 'bienvenido#index'
+
+  resources :articulos do
+    resources :comentarios
+  end
 
 end

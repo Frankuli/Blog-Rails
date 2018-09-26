@@ -1,5 +1,5 @@
 class ArticulosController < ApplicationController
-
+    http_basic_authenticate_with name: "fran", password: "123", except: [:index, :show] 
     def index
         @articulos = Articulo.all
     end

@@ -10,13 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_25_213353) do
+ActiveRecord::Schema.define(version: 2018_09_26_191718) do
 
   create_table "articulos", force: :cascade do |t|
     t.string "title"
     t.text "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "comentarios", force: :cascade do |t|
+    t.string "commenter"
+    t.text "body"
+    t.integer "articulo_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["articulo_id"], name: "index_comentarios_on_articulo_id"
   end
 
 end

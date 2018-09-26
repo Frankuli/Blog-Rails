@@ -1,3 +1,4 @@
+<h1>Articulo:</h1>
 <p>
     <strong>Titulo:</strong>
     <%= @articulo.title%>
@@ -6,5 +7,14 @@
     <strong>Contenido:</strong>
     <%= @articulo.text%>
 </p>
-<%= link_to 'Editar', articulos_path %>
+
+<%= link_to 'Editar', edit_articulo_path(@articulo) %>
+
+<h2>Añadir un comentario:</h2>
+<%= render 'comentarios/form' %>
+
+
+<h2>Comentarios</h2>
+<%= render @articulo.comentarios %>
+
 <%= link_to 'Volver', articulos_path %>
